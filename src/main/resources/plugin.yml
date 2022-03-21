@@ -1,0 +1,31 @@
+name: ShoppingDistrictHelper
+version: '${version}'
+main: com.ivan1pl.spigot.plugins.sdhelper.ShoppingDistrictHelper
+api-version: 1.18
+authors: [ Ivan1 ]
+description: Shopping district helper for vanilla shops (no economy)
+permissions:
+  shopping-district-helper.all:
+    children:
+      shopping-district-helper.admin: true
+      shopping-district-helper.user: true
+    default: op
+  shopping-district-helper.admin:
+    default: op
+  shopping-district-helper.user:
+    default: true
+commands:
+  shop:
+    description: Manage shops.
+    permission: shopping-district-helper.admin
+    permission-message: You do not have permission to use this command.
+    usage: >
+      /shop corner1 [pos]
+      /shop corner2 [pos]
+      /shop save
+      /shop remove
+  shoplookup:
+    description: Find shops selling specific item.
+    permission: shopping-district-helper.user
+    permission-message: You do not have permission to use this command.
+    usage: /shoplookup <item>
